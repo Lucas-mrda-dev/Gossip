@@ -4,7 +4,7 @@ A small Sinatra + ERB + CSV gossip board where you can create, list, and view go
 ##What’s inside 
 Stack: Sinatra + ERB, CSV persistence
 Domain: Gossip encapsulates author / content; save writes, all reads all
-Features: list (/), form (/gossips/new/), create (POST /gossips/new/), detail (/gossips/:id/, ID is 1-based)
+Features: list, form, create, detail
 Views: index, new_gossip, show
 Flow: form → save → CSV → redirect → list
 
@@ -22,7 +22,6 @@ If the ID is out of range → “Gossip not found”
 
 ##Tips & pitfalls
 locals vs @variables: index.erb receives gossips via locals
-ERB interpolation: <% ... %> executes, <%= ... %> prints
 CSV append: open with 'ab' to add without overwriting
 Route order: define GET /gossips/new/ before GET /gossips/:id/ so :id doesn’t capture "new"
 Form params: keys come from name= attributes (gossip_author, gossip_content)
