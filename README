@@ -1,31 +1,31 @@
-# Gossip Board (Sinatra + ERB + CSV)
+#Gossip Board (Sinatra + ERB + CSV)
 A small Sinatra + ERB + CSV gossip board where you can create, list, and view gossips (author, content).
 
-## What’s inside 
+##What’s inside 
 Stack: Sinatra + ERB, CSV persistence
 Domain: Gossip encapsulates author / content; save writes, all reads all
 Features: list (/), form (/gossips/new/), create (POST /gossips/new/), detail (/gossips/:id/, ID is 1-based)
 Views: index, new_gossip, show
 Flow: form → save → CSV → redirect → list
 
-## How to launch
+##How to launch
 bundle install
 ruby app.rb (or: rackup -p 4567)
 then open: http://localhost:4567/
 
-## Endpoints
+##Endpoints
 GET / → home page: list of gossips + “Create a gossip” link
 GET /gossips/new/ → renders the creation form
 POST /gossips/new/ → saves author and content to CSV
 GET /gossips/:id/ → shows gossip #:id (1 = first, 2 = second, …)
 If the ID is out of range → “Gossip not found”
 
-## Tips & pitfalls
+##Tips & pitfalls
 locals vs @variables: index.erb receives gossips via locals
 ERB interpolation: <% ... %> executes, <%= ... %> prints
 CSV append: open with 'ab' to add without overwriting
 Route order: define GET /gossips/new/ before GET /gossips/:id/ so :id doesn’t capture "new"
 Form params: keys come from name= attributes (gossip_author, gossip_content)
 
-## Credits
+##Credits
 This project was done during The Hacking Project.

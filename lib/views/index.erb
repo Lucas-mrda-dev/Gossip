@@ -3,6 +3,44 @@
   <head>
     <meta charset="UTF-8">
     <title>Découvres les potins de THP</title>
+    <style>
+    /** Oui je sais c'est pas propre mais il était tard**/
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f9f9f9;
+      color: grey;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    article {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    p strong {
+      display: inline-block;
+      width: 100px;
+      font-weight: bold;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
   </head>
   <body>
     <h1>Bienvenue à toi !</h1>
@@ -12,7 +50,7 @@
     <p>Aucun potin pour le moment.</p>
   <% else %>
     <% gossips.each_with_index do |gossip, i| %>
-      <article style="margin-bottom:1rem;">
+      <article>
         <p><strong>Auteur :</strong> <%= gossip.author %></p>
         <p><strong>Contenu :</strong> <%= gossip.content %></p>
         <p><a href="/gossips/<%= i + 1 %>/">Consulte ce potin</a></p>

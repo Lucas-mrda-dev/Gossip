@@ -1,15 +1,15 @@
 require 'gossip'
 
 class ApplicationController < Sinatra::Base
-  get '/' do
+  get '/' do # Go to the home page
     erb :index, locals: { gossips: Gossip.all }
   end
 
-  get '/gossips/new/' do
+  get '/gossips/new/' do # Create a new potin
     erb :new_gossip
   end
 
-  get '/gossips/:id/' do
+  get '/gossips/:id/' do # Select your potin with an ID
     id_str = params[:id]
     idx = id_str.to_i - 1
     list = Gossip.all
