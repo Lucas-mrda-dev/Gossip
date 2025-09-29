@@ -1,4 +1,4 @@
-# Gossip Board (Sinatra + ERB + CSV)
+#Gossip Board (Sinatra + ERB + CSV)
 A small Sinatra + ERB + CSV gossip board where you can create, list, and view gossips (author, content).
 
 ## What’s inside 
