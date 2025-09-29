@@ -2,20 +2,25 @@
 <html lang ="fr">
   <head>
     <meta charset="UTF-8">
-  <head>
     <title>Découvres les potins de THP</title>
   </head>
   <body>
     <h1>Bienvenue à toi !</h1>
     <h2>La liste des potins arrivent bientôt, prépare toi !</h2>
 
-    <% gossips.each do |gossip| %>
-    <p>
-      <%= gossip.author %><br/>
-      <%= gossip.content %>
-    </p>
-      <% end %>
+  <% if gossips.empty? %>
+    <p>Aucun potin pour le moment.</p>
+  <% else %>
+    <% gossips.each_with_index do |gossip, i| %>
+      <article style="margin-bottom:1rem;">
+        <p><strong>Auteur :</strong> <%= gossip.author %></p>
+        <p><strong>Contenu :</strong> <%= gossip.content %></p>
+        <p><a href="/gossips/<%= i + 1 %>/">Consulte ce potin</a></p>
+      </article>
+    <% end %>
+  <% end %>
 
-    <a href="/gossips/new/">En attendant tu peux créer un nouveau potin ici !</a>
+  <hr />
+  <p><a href="/gossips/new/">Créer un nouveau potin</a></p>
   </body>
 </html>
