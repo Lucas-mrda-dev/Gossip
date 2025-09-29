@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang ="fr">
+  <head>
+    <meta charset="UTF-8">
+  <head>
+    <title>Potin <%= params[:id] %></title>
+  </head>
+  <body>
+    <h1>Voici le potin n°<%= params[:id] %></h1>
+    <p><strong>Auteur :</strong> <%= gossip.author %></p>
+    <p><strong>Contenu :</strong> <%= gossip.content %></p>
+    <a href="/">← Retour à l'accueil</a>
+  </body>
+</html>

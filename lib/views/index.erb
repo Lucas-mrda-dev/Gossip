@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang ="fr">
+  <head>
+    <meta charset="UTF-8">
+  <head>
+    <title>Découvres les potins de THP</title>
+  </head>
+  <body>
+    <h1>Bienvenue à toi !</h1>
+    <h2>La liste des potins arrivent bientôt, prépare toi !</h2>
+
+    <% gossips.each do |gossip| %>
+    <p>
+      <%= gossip.author %><br/>
+      <%= gossip.content %>
+    </p>
+      <% end %>
+
+    <a href="/gossips/new/">En attendant tu peux créer un nouveau potin ici !</a>
+  </body>
+</html>
